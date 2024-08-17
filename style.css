@@ -15,7 +15,26 @@
     --boder-radius: 15px;
     --box-shadow: rgba(0, 0, 0, 0.364);
 }
+/* Định dạng cho thanh cuộn */
+::-webkit-scrollbar {
+    width: 5%; 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-box-black); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--body-background-color); 
+    border-radius: 10px; 
+}
 /* Cài đặt chung */
 * {
     margin: 0;
@@ -25,9 +44,10 @@
 }
 
 
-html,body{
-    overflow: hidden;
+html, body {
+    overflow-x: hidden;
 }
+
 
 body, table, td, a {
     -webkit-text-size-adjust: 100%;
@@ -46,6 +66,7 @@ body {
     background-color: var(--body-background-color);
     color: var(--body-font-color);
     font-family: "Poppins", sans-serif;
+    overflow: auto;
 }
 
 ul {
@@ -176,6 +197,7 @@ main {
     grid-area: main;
     transition: margin-left 0.3s ease;
     z-index: 999;
+    overflow: auto; 
 }
 
 /* Header */
@@ -356,6 +378,7 @@ header #toggle-menu:hover {
     border-radius: var(--boder-radius);
     color: var(--textcolor-content);
     position: relative;
+    overflow-y: scroll;
 }
 
 #main .content::after {
@@ -490,7 +513,13 @@ header #toggle-menu:hover {
     }
 
     #main header{
-        border-radius: 15px;
+        border-radius: var(--boder-radius);
+        width: 100%;
+        position: fixed;
+        top: 5vh;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 9999;
     }
 
     #main header .box-mobile{
@@ -503,7 +532,6 @@ header #toggle-menu:hover {
         width: 35px;
         height: 35px;
     }
-
 
 
     .sidebar-mobile{
@@ -522,7 +550,15 @@ header #toggle-menu:hover {
     }
 
     .sidebar-mobile{
+        width: 100%;
         height: 95px;
+    }
+    .sidebar-mobile{
+        position: fixed;
+        bottom: 5vh;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 9999;
     }
 
     .sidebar-mobile .menu{
@@ -532,7 +568,7 @@ header #toggle-menu:hover {
         height: 55px;
         margin-top: 35px;
         background-color: var(--sidebar-bgcolor);
-        gap:60px;
+        gap:40px;
     }
 
     .sidebar-mobile .menu li{
@@ -580,37 +616,13 @@ header #toggle-menu:hover {
 
     .sidebar-mobile .box-active {
         position: absolute;
-        top: -5px;
-        width: 74px;
-        height: 74px;
+        top: 0;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
         background-color: var(--bgcolor-active);
         border: 9px solid var(--body-background-color);
         z-index: 1;
-    }
-    
-    .sidebar-mobile .box-active::after {
-        content: "";
-        position: absolute;
-        left: -25px;
-        top: 31px;
-        width: 20px;
-        height: 20px;
-        background-color: var(--sidebar-bgcolor);
-        box-shadow: 5px -10px 0px var(--body-background-color);
-        border-top-right-radius: 50px;
-    }
-    
-    .sidebar-mobile .box-active::before {
-        content: "";
-        position: absolute;
-        right: -25px;
-        top: 31px;
-        width: 20px;
-        height: 20px;
-        background-color: var(--sidebar-bgcolor);
-        box-shadow: -5px -10px 0px var(--body-background-color);
-        border-top-left-radius: 50px;
     }
 
     .sidebar-mobile .active a {
@@ -624,28 +636,32 @@ header #toggle-menu:hover {
     }
     /* Position the active box under the active item */
     .sidebar-mobile ul li:nth-child(1).active ~ .box-active {
-        transform: translateX(calc(-231%));
+        transform: translateX(calc(-205.2%));
     }
 
     .sidebar-mobile ul li:nth-child(2).active ~ .box-active {
-        transform: translateX(-115.5%);
+        transform: translateX(-103.5%);
     }
 
     .sidebar-mobile ul li:nth-child(3).active ~ .box-active {
-        transform: translateX(0%);
+        transform: translateX(-1%);
     }
 
     .sidebar-mobile ul li:nth-child(4).active ~ .box-active {
-        transform: translateX(115.5%);
+        transform: translateX(101.5%);
     }
 
     .sidebar-mobile ul li:nth-child(5).active ~ .box-active {
-        transform: translateX(231%);
+        transform: translateX(206%);
     }
 
     #main .content .Home .text-content h1
     {
         margin-top: 0;
+    }
+
+    #main .content{
+        margin-top: 3vh;
     }
 
     #main .content .Home .box-img img{
@@ -729,11 +745,10 @@ header #toggle-menu:hover {
     }
 
     #main {
-        width: 100vw;
+        width: 100%;
         padding: 0;
         margin: 0;
         height: 100vh;
-        overflow: hidden; 
     }
 
     .sidebar {
@@ -742,6 +757,7 @@ header #toggle-menu:hover {
 
     .sidebar-mobile {
         height: 95px;
+        width: 100%;
     }
 
     #main .container{
