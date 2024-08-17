@@ -31,3 +31,20 @@ document.querySelectorAll('.sidebar-mobile .menu li').forEach(item => {
 });
 
 updateSectionDisplay('Home');
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the form element
+  const commentForm = document.querySelector(".comments-form");
+
+  // Add an event listener for the form submission
+  commentForm.addEventListener("submit", function(event) {
+      // Prevent the form from actually submitting
+      event.preventDefault();
+
+      // Display a notification
+      alert("This section will be fully updated later.");
+
+      // Optionally, clear the form inputs (if needed)
+      commentForm.reset();
+  });
+});

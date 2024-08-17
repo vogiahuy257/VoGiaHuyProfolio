@@ -464,8 +464,289 @@ header #toggle-menu:hover {
 
 /* Work css */
 
+#main .content .experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 3rem;
+    gap: 30px;
+}
+
+#main .content .experience-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px); 
+    max-width: calc(50% - 20px);
+    box-shadow: 0px 0px 10px var(--box-shadow);
+    border-radius: var(--boder-radius);
+    overflow: hidden;
+    position: relative;
+}
 
 
+
+#main .content .experience-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#main .content .experience-text {
+    padding: 15px;
+}
+ 
+#main .content .experience-text h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+#main .content .experience-text p {
+    margin: 5px 0;
+}
+
+#main .content .experience-item .box-time {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 10px;
+    border-radius: var(--boder-radius);
+    background-color: rgba(15, 15, 15, 0.692);
+    color: var(--bgcolor-active);
+}
+
+
+/* skill CSS */
+
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-item {
+    text-align: center;
+    flex: 1 1 calc(40% - 40px); /* Responsive layout for 3 columns */
+    max-width: calc(40% - 40px);
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--bgcolor-active);
+    color: var(--color-active-hover);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.skill-item:hover {
+    background-color: #e0e0e0;
+}
+
+.skill-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.skill-item h2 {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        flex: 1 1 calc(50% - 40px); /* Responsive layout for 2 columns on medium screens */
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-item {
+        flex: 1 1 100%; /* Responsive layout for 1 column on small screens */
+        max-width: 100%;
+    }
+}
+
+
+/* cert CSS */
+
+.cert-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cert-item {
+    text-align: center;
+    flex: 1 1 calc(40% - 40px); 
+    max-width: calc(40% - 40px);
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--bgcolor-active);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    color: var(--color-active-hover);
+}
+
+.cert-item:hover {
+    background-color: #e0e0e0;
+}
+
+.cert-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.cert-item h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.cert-item p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .cert-item {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/*------------------- Reviews CSS ---------------------------- */
+
+.reviews-list {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.comments-form {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.comments-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 1em;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: var(--color-active-hover);
+    color: var(--bgcolor-active);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.btn-submit:hover {
+    background-color: var(--bgcolor-active);
+    color: var(--color-active-hover);
+}
+
+.review-item {
+    margin-bottom: 20px;
+}
+
+.review-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.review-item p {
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+@media (min-width: 768px) {
+    .reviews-list {
+        max-width: 85%;
+    }
+
+    .comments-form h2 {
+        font-size: 1.8em;
+    }
+
+    .btn-submit {
+        width: auto;
+        max-width: 180px;
+    }
+}
+
+/* For desktops and above */
+@media (min-width: 992px) {
+    .reviews-list {
+        max-width: 75%;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+        font-size: 1em;
+    }
+
+    .btn-submit {
+        font-size: 1.1em;
+    }
+}
+
+/* For large screens */
+@media (min-width: 1200px) {
+    .reviews-list {
+        max-width: 65%;
+    }
+
+    .comments-form h2 {
+        font-size: 2em;
+    }
+
+    .btn-submit {
+        font-size: 1.2em;
+    }
+}
 
 
 
@@ -485,6 +766,12 @@ header #toggle-menu:hover {
 
     #main{
         padding: 0;
+    }
+
+    #main .content .experience-item {
+        margin: auto;
+        flex: 1 1 90%; 
+        max-width: 90%;
     }
 
     #main .container{
@@ -558,7 +845,7 @@ header #toggle-menu:hover {
     }
     .sidebar-mobile{
         position: fixed;
-        bottom: 5vh;
+        bottom: 4vh;
         left: 50%;
         transform: translate(-50%);
         z-index: 9999;
