@@ -66,7 +66,6 @@ body {
     background-color: var(--body-background-color);
     color: var(--body-font-color);
     font-family: "Poppins", sans-serif;
-    overflow: auto;
 }
 
 ul {
@@ -379,6 +378,7 @@ header #toggle-menu:hover {
     color: var(--textcolor-content);
     position: relative;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #main .content::after {
@@ -461,6 +461,9 @@ header #toggle-menu:hover {
 #main header .box-mobile{
     display: none;
 }
+
+/* Work css */
+
 
 
 
